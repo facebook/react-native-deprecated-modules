@@ -10,7 +10,7 @@ Please don't send pull requests or open issues on this repo. Instead, migrate yo
 
 ## Example
 
-`MapView` was removed from React Native in version 0.40 in favor of a new [`MapView` by Airbnb](https://github.com/airbnb/react-native-maps). You should use the MapView by Airbnb in your code.
+`MapView` was removed from React Native in favor of a new [`MapView` by Airbnb](https://github.com/airbnb/react-native-maps). You should use the MapView by Airbnb in your code.
 
 We know you are busy making your apps awesome. Therefore we are releasing the old modules in this repo so you can upgrade your code at your own pace. In the meantime, you can do:
 
