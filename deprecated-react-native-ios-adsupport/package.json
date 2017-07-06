@@ -1,10 +1,10 @@
 {
-	"name": "deprecated-react-native-ios-adsupport",
-	"version": "0.48.0",
-	"description": "",
-    "license": "BSD-3-Clause",
-    "repository": {
-      "type": "git",
-      "url": "git@github.com:facebookarchive/react-native-deprecated-modules.git"
-    }
+  "name": "deprecated-react-native-ios-adsupport",
+  "version": "0.48.0",
+  "description": "",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:facebookarchive/react-native-deprecated-modules.git"
+  }
 }
