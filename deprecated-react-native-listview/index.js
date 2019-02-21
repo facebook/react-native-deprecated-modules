@@ -24,7 +24,7 @@ const createReactClass = require('create-react-class');
 const isEmpty = require('react-native/Libraries/vendor/core/isEmpty');
 const merge = require('react-native/Libraries/vendor/core/merge');
 
-import type { Props as ScrollViewProps } from 'ScrollView';
+import type {Props as ScrollViewProps} from 'ScrollView';
 
 const DEFAULT_PAGE_SIZE = 1;
 const DEFAULT_INITIAL_ROWS = 10;
@@ -283,14 +283,14 @@ const ListView = createReactClass({
    *
    * See `ScrollView#scrollToEnd`.
    */
-  scrollToEnd: function(options?: ?{ animated?: boolean }) {
+  scrollToEnd: function(options?: ?{animated?: boolean}) {
     if (this._scrollComponent) {
       if (this._scrollComponent.scrollToEnd) {
         this._scrollComponent.scrollToEnd(options);
       } else {
         console.warn(
           'The scroll component used by the ListView does not support ' +
-            'scrollToEnd. Check the renderScrollComponent prop of your ListView.'
+            'scrollToEnd. Check the renderScrollComponent prop of your ListView.',
         );
       }
     }
@@ -381,11 +381,11 @@ const ListView = createReactClass({
               Math.max(state.curRenderedRowsCount, props.initialListSize),
               props.enableEmptySections
                 ? props.dataSource.getRowAndSectionCount()
-                : props.dataSource.getRowCount()
+                : props.dataSource.getRowCount(),
             ),
           };
         },
-        () => this._renderMoreRowsIfNeeded()
+        () => this._renderMoreRowsIfNeeded(),
       );
     }
   },
@@ -397,7 +397,7 @@ const ListView = createReactClass({
   },
 
   _onRowHighlighted: function(sectionID: string, rowID: string) {
-    this.setState({ highlightedRow: { sectionID, rowID } });
+    this.setState({highlightedRow: {sectionID, rowID}});
   },
 
   render: function() {
@@ -408,7 +408,7 @@ const ListView = createReactClass({
     let rowCount = 0;
     const stickySectionHeaderIndices = [];
 
-    const { renderSectionHeader } = this.props;
+    const {renderSectionHeader} = this.props;
 
     const header = this.props.renderHeader && this.props.renderHeader();
     const footer = this.props.renderFooter && this.props.renderFooter();
@@ -423,7 +423,7 @@ const ListView = createReactClass({
           warning(
             false,
             'In next release empty section headers will be rendered.' +
-              " In this release you can use 'enableEmptySections' flag to render empty section headers."
+              " In this release you can use 'enableEmptySections' flag to render empty section headers.",
           );
           continue;
         } else {
@@ -432,7 +432,7 @@ const ListView = createReactClass({
             this.props.enableEmptySections,
             "In next release 'enableEmptySections' flag will be deprecated, empty section headers will always be rendered." +
               ' If empty section headers are not desirable their indices should be excluded from sectionIDs object.' +
-              " In this release 'enableEmptySections' may only have value 'true' to allow empty section headers rendering."
+              " In this release 'enableEmptySections' may only have value 'true' to allow empty section headers rendering.",
           );
         }
       }
@@ -440,11 +440,11 @@ const ListView = createReactClass({
       if (renderSectionHeader) {
         const element = renderSectionHeader(
           dataSource.getSectionHeaderData(sectionIdx),
-          sectionID
+          sectionID,
         );
         if (element) {
           bodyComponents.push(
-            React.cloneElement(element, { key: 's_' + sectionID })
+            React.cloneElement(element, {key: 's_' + sectionID}),
           );
           if (this.props.stickySectionHeadersEnabled) {
             stickySectionHeaderIndices.push(totalIndex);
@@ -468,7 +468,7 @@ const ListView = createReactClass({
               dataSource.getRowData(sectionIdx, rowIdx),
               sectionID,
               rowID,
-              this._onRowHighlighted
+              this._onRowHighlighted,
             )}
           />
         );
@@ -486,7 +486,7 @@ const ListView = createReactClass({
           const separator = this.props.renderSeparator(
             sectionID,
             rowID,
-            adjacentRowHighlighted
+            adjacentRowHighlighted,
           );
           if (separator) {
             bodyComponents.push(<View key={'s_' + comboID}>{separator}</View>);
@@ -502,7 +502,7 @@ const ListView = createReactClass({
       }
     }
 
-    const { renderScrollComponent, ...props } = this.props;
+    const {renderScrollComponent, ...props} = this.props;
     if (!props.scrollEventThrottle) {
       props.scrollEventThrottle = DEFAULT_SCROLL_CALLBACK_THROTTLE;
     }
@@ -512,7 +512,7 @@ const ListView = createReactClass({
     Object.assign(props, {
       onScroll: this._onScroll,
       stickyHeaderIndices: this.props.stickyHeaderIndices.concat(
-        stickySectionHeaderIndices
+        stickySectionHeaderIndices,
       ),
 
       // Do not pass these events downstream to ScrollView since they will be
@@ -534,7 +534,7 @@ const ListView = createReactClass({
       },
       header,
       bodyComponents,
-      footer
+      footer,
     );
   },
 
@@ -562,7 +562,7 @@ const ListView = createReactClass({
       RCTScrollViewManager.calculateChildFrames &&
       RCTScrollViewManager.calculateChildFrames(
         ReactNative.findNodeHandle(scrollComponent),
-        this._updateVisibleRows
+        this._updateVisibleRows,
       );
   },
 
@@ -582,7 +582,7 @@ const ListView = createReactClass({
   },
 
   _onLayout: function(event: Object) {
-    const { width, height } = event.nativeEvent.layout;
+    const {width, height} = event.nativeEvent.layout;
     const visibleLength = !this.props.horizontal ? height : width;
     if (visibleLength !== this.scrollProperties.visibleLength) {
       this.scrollProperties.visibleLength = visibleLength;
@@ -636,7 +636,7 @@ const ListView = createReactClass({
           state.curRenderedRowsCount + props.pageSize,
           props.enableEmptySections
             ? props.dataSource.getRowAndSectionCount()
-            : props.dataSource.getRowCount()
+            : props.dataSource.getRowCount(),
         );
         this._prevRenderedRowsCount = state.curRenderedRowsCount;
         return {
@@ -646,7 +646,7 @@ const ListView = createReactClass({
       () => {
         this._measureAndUpdateScrollProps();
         this._prevRenderedRowsCount = this.state.curRenderedRowsCount;
-      }
+      },
     );
   },
 

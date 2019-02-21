@@ -19,14 +19,14 @@ const warning = require('fbjs/lib/warning');
 function defaultGetRowData(
   dataBlob: any,
   sectionID: number | string,
-  rowID: number | string
+  rowID: number | string,
 ): any {
   return dataBlob[sectionID][rowID];
 }
 
 function defaultGetSectionHeaderData(
   dataBlob: any,
-  sectionID: number | string
+  sectionID: number | string,
 ): any {
   return dataBlob[sectionID];
 }
@@ -103,7 +103,7 @@ class ListViewDataSource {
   constructor(params: ParamType) {
     invariant(
       params && typeof params.rowHasChanged === 'function',
-      'Must provide a rowHasChanged function.'
+      'Must provide a rowHasChanged function.',
     );
     this._rowHasChanged = params.rowHasChanged;
     this._getRowData = params.getRowData || defaultGetRowData;
@@ -139,14 +139,14 @@ class ListViewDataSource {
    * this function as the `dataBlob`.
    */
   cloneWithRows(
-    dataBlob: $ReadOnlyArray<any> | { +[key: string]: any },
-    rowIdentities: ?$ReadOnlyArray<string>
+    dataBlob: $ReadOnlyArray<any> | {+[key: string]: any},
+    rowIdentities: ?$ReadOnlyArray<string>,
   ): ListViewDataSource {
     const rowIds = rowIdentities ? [[...rowIdentities]] : null;
     if (!this._sectionHeaderHasChanged) {
       this._sectionHeaderHasChanged = () => false;
     }
-    return this.cloneWithRowsAndSections({ s1: dataBlob }, ['s1'], rowIds);
+    return this.cloneWithRowsAndSections({s1: dataBlob}, ['s1'], rowIds);
   }
 
   /**
@@ -171,17 +171,17 @@ class ListViewDataSource {
   cloneWithRowsAndSections(
     dataBlob: any,
     sectionIdentities: ?Array<string>,
-    rowIdentities: ?Array<Array<string>>
+    rowIdentities: ?Array<Array<string>>,
   ): ListViewDataSource {
     invariant(
       typeof this._sectionHeaderHasChanged === 'function',
-      'Must provide a sectionHeaderHasChanged function with section data.'
+      'Must provide a sectionHeaderHasChanged function with section data.',
     );
     invariant(
       !sectionIdentities ||
         !rowIdentities ||
         sectionIdentities.length === rowIdentities.length,
-      'row and section ids lengths must be the same'
+      'row and section ids lengths must be the same',
     );
 
     const newSource = new ListViewDataSource({
@@ -209,7 +209,7 @@ class ListViewDataSource {
     newSource._calculateDirtyArrays(
       this._dataBlob,
       this.sectionIdentities,
-      this.rowIdentities
+      this.rowIdentities,
     );
 
     return newSource;
@@ -240,7 +240,7 @@ class ListViewDataSource {
     const needsUpdate = this._dirtyRows[sectionIndex][rowIndex];
     warning(
       needsUpdate !== undefined,
-      'missing dirtyBit for section, row: ' + sectionIndex + ', ' + rowIndex
+      'missing dirtyBit for section, row: ' + sectionIndex + ', ' + rowIndex,
     );
     return needsUpdate;
   }
@@ -253,7 +253,7 @@ class ListViewDataSource {
     const rowID = this.rowIdentities[sectionIndex][rowIndex];
     warning(
       sectionID !== undefined && rowID !== undefined,
-      'rendering invalid section, row: ' + sectionIndex + ', ' + rowIndex
+      'rendering invalid section, row: ' + sectionIndex + ', ' + rowIndex,
     );
     return this._getRowData(this._dataBlob, sectionID, rowID);
   }
@@ -308,7 +308,7 @@ class ListViewDataSource {
     const needsUpdate = this._dirtySections[sectionIndex];
     warning(
       needsUpdate !== undefined,
-      'missing dirtyBit for section: ' + sectionIndex
+      'missing dirtyBit for section: ' + sectionIndex,
     );
     return needsUpdate;
   }
@@ -323,7 +323,7 @@ class ListViewDataSource {
     const sectionID = this.sectionIdentities[sectionIndex];
     warning(
       sectionID !== undefined,
-      'renderSection called on invalid section: ' + sectionIndex
+      'renderSection called on invalid section: ' + sectionIndex,
     );
     return this._getSectionHeaderData(this._dataBlob, sectionID);
   }
@@ -350,7 +350,7 @@ class ListViewDataSource {
   _calculateDirtyArrays(
     prevDataBlob: any,
     prevSectionIDs: Array<string>,
-    prevRowIDs: Array<Array<string>>
+    prevRowIDs: Array<Array<string>>,
   ): void {
     // construct a hashmap of the existing (old) id arrays
     const prevSectionsHash = keyedDictionaryFromArray(prevSectionIDs);
@@ -359,7 +359,7 @@ class ListViewDataSource {
       const sectionID = prevSectionIDs[ii];
       warning(
         !prevRowsHash[sectionID],
-        'SectionID appears more than once: ' + sectionID
+        'SectionID appears more than once: ' + sectionID,
       );
       prevRowsHash[sectionID] = keyedDictionaryFromArray(prevRowIDs[ii]);
     }
@@ -377,7 +377,7 @@ class ListViewDataSource {
       if (!dirty && sectionHeaderHasChanged) {
         dirty = sectionHeaderHasChanged(
           this._getSectionHeaderData(prevDataBlob, sectionID),
-          this._getSectionHeaderData(this._dataBlob, sectionID)
+          this._getSectionHeaderData(this._dataBlob, sectionID),
         );
       }
       this._dirtySections.push(!!dirty);
@@ -395,7 +395,7 @@ class ListViewDataSource {
           !prevRowsHash[sectionID][rowID] ||
           this._rowHasChanged(
             this._getRowData(prevDataBlob, sectionID, rowID),
-            this._getRowData(this._dataBlob, sectionID, rowID)
+            this._getRowData(this._dataBlob, sectionID, rowID),
           );
         this._dirtyRows[sIndex].push(!!dirty);
       }

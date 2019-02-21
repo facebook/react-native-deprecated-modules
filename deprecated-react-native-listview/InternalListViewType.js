@@ -23,7 +23,7 @@ class InternalListViewType<Props> extends React.Component<Props> {
   getScrollableNode(): any {}
   getMetrics(): Object {}
   scrollTo(...args: Array<mixed>) {}
-  scrollToEnd(options?: ?{ animated?: ?boolean }) {}
+  scrollToEnd(options?: ?{animated?: ?boolean}) {}
 }
 
 module.exports = InternalListViewType;
