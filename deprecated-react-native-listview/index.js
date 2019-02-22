@@ -24,7 +24,7 @@ const createReactClass = require('create-react-class');
 const isEmpty = require('react-native/Libraries/vendor/core/isEmpty');
 const merge = require('react-native/Libraries/vendor/core/merge');
 
-import type {Props as ScrollViewProps} from 'ScrollView';
+import type {Props as ScrollViewProps} from 'react-native/Libraries/Components/ScrollView/ScrollView';
 
 const DEFAULT_PAGE_SIZE = 1;
 const DEFAULT_INITIAL_ROWS = 10;
