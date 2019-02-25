@@ -1,5 +1,5 @@
 {
-  "name": "deprecated-react-native-swipeablelistview",
+  "name": "deprecated-react-native-swipeable-listview",
   "version": "0.0.1",
   "description": "",
   "license": "BSD-3-Clause",
@@ -8,8 +8,10 @@
     "url": "git@github.com:facebookarchive/react-native-deprecated-modules.git"
   },
   "dependencies": {
-    "deprecated-react-native-listview": "0.0.1",
-    "react": "^16.0",
-    "react-native": "^0.58.0"
+    "deprecated-react-native-listview": "*"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   }
 }

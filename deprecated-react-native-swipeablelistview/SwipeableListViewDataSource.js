@@ -54,12 +54,12 @@ class SwipeableListViewDataSource {
   cloneWithRowsAndSections(
     dataBlob: any,
     sectionIdentities: ?Array<string>,
-    rowIdentities: ?Array<Array<string>>
+    rowIdentities: ?Array<Array<string>>,
   ): SwipeableListViewDataSource {
     this._dataSource = this._dataSource.cloneWithRowsAndSections(
       dataBlob,
       sectionIdentities,
-      rowIdentities
+      rowIdentities,
     );
 
     this._dataBlob = dataBlob;
@@ -107,7 +107,7 @@ class SwipeableListViewDataSource {
     this._dataSource = this._dataSource.cloneWithRowsAndSections(
       this._dataBlob,
       this.sectionIdentities,
-      this.rowIdentities
+      this.rowIdentities,
     );
 
     return this;

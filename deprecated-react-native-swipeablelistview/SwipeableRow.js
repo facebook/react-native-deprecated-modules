@@ -11,8 +11,10 @@
 'use strict';
 
 const React = require('react');
-const ReactNative = require('react-native');
-const { Animated, I18nManager, PanResponder, StyleSheet, View } = ReactNative;
+const {Animated, I18nManager, PanResponder, StyleSheet, View} = require('react-native');
+
+import type {LayoutEvent, PressEvent} from 'react-native/Libraries/Types/CoreEventTypes';
+import type {GestureState} from 'react-native/Libraries/Interaction/PanResponder';
 
 const IS_RTL = I18nManager.isRTL;
 
@@ -77,14 +79,23 @@ type State = {
  * to use this component separately.
  */
 class SwipeableRow extends React.Component<Props, State> {
-  _handleMoveShouldSetPanResponderCapture = (event, gestureState): boolean => {
+  _handleMoveShouldSetPanResponderCapture = (
+    event: PressEvent,
+    gestureState: GestureState,
+  ): boolean => {
     // Decides whether a swipe is responded to by this component or its child
     return gestureState.dy < 10 && this._isValidSwipe(gestureState);
   };
 
-  _handlePanResponderGrant = (event, gestureState): void => {};
+  _handlePanResponderGrant = (
+    event: PressEvent,
+    gestureState: GestureState,
+  ): void => {};
 
-  _handlePanResponderMove = (event, gestureState): void => {
+  _handlePanResponderMove = (
+    event: PressEvent,
+    gestureState: GestureState,
+  ): void => {
     if (this._isSwipingExcessivelyRightFromClosedPosition(gestureState)) {
       return;
     }
@@ -98,11 +109,17 @@ class SwipeableRow extends React.Component<Props, State> {
     }
   };
 
-  _onPanResponderTerminationRequest = (event, gestureState): boolean => {
+  _onPanResponderTerminationRequest = (
+    event: PressEvent,
+    gestureState: GestureState,
+  ): boolean => {
     return false;
   };
 
-  _handlePanResponderEnd = (event, gestureState): void => {
+  _handlePanResponderEnd = (
+    event: PressEvent,
+    gestureState: GestureState,
+  ): void => {
     const horizontalDistance = IS_RTL ? -gestureState.dx : gestureState.dx;
     if (this._isSwipingRightFromClosed(gestureState)) {
       this.props.onOpen && this.props.onOpen();
@@ -191,8 +208,7 @@ class SwipeableRow extends React.Component<Props, State> {
     if (this.state.isSwipeableViewRendered && this.state.rowHeight) {
       slideOutView = (
         <View
-          style={[styles.slideOutContainer, { height: this.state.rowHeight }]}
-        >
+          style={[styles.slideOutContainer, {height: this.state.rowHeight}]}>
           {this.props.slideoutView}
         </View>
       );
@@ -202,8 +218,7 @@ class SwipeableRow extends React.Component<Props, State> {
     const swipeableView = (
       <Animated.View
         onLayout={this._onSwipeableViewLayout}
-        style={{ transform: [{ translateX: this.state.currentLeft }] }}
-      >
+        style={{transform: [{translateX: this.state.currentLeft}]}}>
         {this.props.children}
       </Animated.View>
     );
@@ -221,7 +236,7 @@ class SwipeableRow extends React.Component<Props, State> {
     this._animateToClosedPosition();
   }
 
-  _onSwipeableViewLayout = (event): void => {
+  _onSwipeableViewLayout = (event: LayoutEvent): void => {
     this.setState({
       isSwipeableViewRendered: true,
       rowHeight: event.nativeEvent.layout.height,
@@ -239,12 +254,12 @@ class SwipeableRow extends React.Component<Props, State> {
 
   _swipeSlowSpeed(gestureState: GestureState): void {
     this.state.currentLeft.setValue(
-      this._previousLeft + gestureState.dx / SLOW_SPEED_SWIPE_FACTOR
+      this._previousLeft + gestureState.dx / SLOW_SPEED_SWIPE_FACTOR,
     );
   }
 
   _isSwipingExcessivelyRightFromClosedPosition(
-    gestureState: GestureState
+    gestureState: GestureState,
   ): boolean {
     /**
      * We want to allow a BIT of right swipe, to allow users to know that
@@ -261,7 +276,7 @@ class SwipeableRow extends React.Component<Props, State> {
   _animateTo(
     toValue: number,
     duration: number = SWIPE_DURATION,
-    callback: Function = emptyFunction
+    callback: Function = emptyFunction,
   ): void {
     Animated.timing(this.state.currentLeft, {
       duration,
@@ -321,7 +336,7 @@ class SwipeableRow extends React.Component<Props, State> {
     this._animateTo(
       -swipeBounceBackDistance,
       duration,
-      this._animateToClosedPositionDuringBounce
+      this._animateToClosedPositionDuringBounce,
     );
   }
 
