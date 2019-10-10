@@ -21,8 +21,7 @@ const StaticRenderer = require('./StaticRenderer');
 const View = ReactNative.View;
 const cloneReferencedElement = require('react-clone-referenced-element');
 const createReactClass = require('create-react-class');
-const isEmpty = require('react-native/Libraries/vendor/core/isEmpty');
-const merge = require('react-native/Libraries/vendor/core/merge');
+const isEmpty = require('./isEmpty');
 
 import type {Props as ScrollViewProps} from 'react-native/Libraries/Components/ScrollView/ScrollView';
 
@@ -664,7 +663,7 @@ const ListView = createReactClass({
     }
     if (updatedFrames) {
       updatedFrames.forEach(newFrame => {
-        this._childFrames[newFrame.index] = merge(newFrame);
+        this._childFrames[newFrame.index] = {...newFrame};
       });
     }
     const isVertical = !this.props.horizontal;
