@@ -1,6 +1,6 @@
 {
   "name": "deprecated-react-native-listview",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "This package contains the deprecated ListView module.",
   "license": "BSD-3-Clause",
   "repository": {
