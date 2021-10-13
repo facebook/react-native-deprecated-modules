@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "invariant": "*",
-    "prop-types": "*",
+    "prop-types": "*"
   },
   "peerDependencies": {
     "react": "*",
