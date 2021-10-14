@@ -4,7 +4,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow
  * @format
  */
 
@@ -20,27 +19,19 @@ const ImageStylePropTypes = {
   ...DeprecatedLayoutPropTypes,
   ...DeprecatedShadowPropTypesIOS,
   ...DeprecatedTransformPropTypes,
-  resizeMode: (ReactPropTypes.oneOf([
+  resizeMode: ReactPropTypes.oneOf([
     'center',
     'contain',
     'cover',
     'repeat',
     'stretch',
-  ]): React$PropType$Primitive<
-    'center' | 'contain' | 'cover' | 'repeat' | 'stretch',
-  >),
-  backfaceVisibility: (ReactPropTypes.oneOf([
-    'visible',
-    'hidden',
-  ]): React$PropType$Primitive<'visible' | 'hidden'>),
+  ]),
+  backfaceVisibility: ReactPropTypes.oneOf(['visible', 'hidden']),
   backgroundColor: DeprecatedColorPropType,
   borderColor: DeprecatedColorPropType,
   borderWidth: ReactPropTypes.number,
   borderRadius: ReactPropTypes.number,
-  overflow: (ReactPropTypes.oneOf([
-    'visible',
-    'hidden',
-  ]): React$PropType$Primitive<'visible' | 'hidden'>),
+  overflow: ReactPropTypes.oneOf(['visible', 'hidden']),
 
   /**
    * Changes the color of all the non-transparent pixels to the tintColor.

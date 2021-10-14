@@ -9,7 +9,7 @@
 
 'use strict';
 
-const normalizeColor = require('react-native/Libraries/StyleSheet/normalizeColor');
+const normalizeColor = require('@react-native/normalize-color');
 
 const colorPropType = function(
   isRequired,
@@ -20,7 +20,8 @@ const colorPropType = function(
   propFullName,
 ) {
   const color = props[propName];
-  if (color === undefined || color === null) {
+
+  if (color == null) {
     if (isRequired) {
       return new Error(
         'Required ' +
@@ -42,7 +43,7 @@ const colorPropType = function(
     return;
   }
 
-  if (normalizeColor(color) === null) {
+  if (typeof color === 'string' && normalizeColor(color) === null) {
     return new Error(
       'Invalid ' +
         location +

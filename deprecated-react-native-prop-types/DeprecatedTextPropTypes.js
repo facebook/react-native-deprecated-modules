@@ -4,7 +4,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow
  * @format
  */
 
@@ -16,7 +15,7 @@ const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
 const PropTypes = require('prop-types');
 const DeprecatedTextStylePropTypes = require('./DeprecatedTextStylePropTypes');
 
-const stylePropType: ReactPropsCheckType = DeprecatedStyleSheetPropType(
+const stylePropType = DeprecatedStyleSheetPropType(
   DeprecatedTextStylePropTypes,
 );
 
@@ -29,12 +28,7 @@ module.exports = {
    *
    * See https://reactnative.dev/docs/text.html#ellipsizemode
    */
-  ellipsizeMode: (PropTypes.oneOf([
-    'head',
-    'middle',
-    'tail',
-    'clip',
-  ]): React$PropType$Primitive<'head' | 'middle' | 'tail' | 'clip'>),
+  ellipsizeMode: PropTypes.oneOf(['head', 'middle', 'tail', 'clip']),
   /**
    * Used to truncate the text with an ellipsis.
    *
@@ -46,11 +40,7 @@ module.exports = {
    *
    * See https://reactnative.dev/docs/text.html#textbreakstrategy
    */
-  textBreakStrategy: (PropTypes.oneOf([
-    'simple',
-    'highQuality',
-    'balanced',
-  ]): React$PropType$Primitive<'simple' | 'highQuality' | 'balanced'>),
+  textBreakStrategy: PropTypes.oneOf(['simple', 'highQuality', 'balanced']),
   /**
    * Invoked on mount and layout changes.
    *
@@ -150,9 +140,5 @@ module.exports = {
    *
    * See https://reactnative.dev/docs/text.html#dataDetectorType
    */
-  dataDetectorType: (PropTypes.oneOf(
-    DataDetectorTypes,
-  ): React$PropType$Primitive<
-    'phoneNumber' | 'link' | 'email' | 'none' | 'all',
-  >),
+  dataDetectorType: PropTypes.oneOf(DataDetectorTypes),
 };

@@ -5,7 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @format
- * @flow
  */
 
 'use strict';
@@ -23,10 +22,7 @@ const DeprecatedViewStylePropTypes = {
   ...DeprecatedLayoutPropTypes,
   ...DeprecatedShadowPropTypesIOS,
   ...DeprecatedTransformPropTypes,
-  backfaceVisibility: (ReactPropTypes.oneOf([
-    'visible',
-    'hidden',
-  ]): React$PropType$Primitive<'visible' | 'hidden'>),
+  backfaceVisibility: ReactPropTypes.oneOf(['visible', 'hidden']),
   backgroundColor: DeprecatedColorPropType,
   borderColor: DeprecatedColorPropType,
   borderTopColor: DeprecatedColorPropType,
@@ -44,11 +40,7 @@ const DeprecatedViewStylePropTypes = {
   borderBottomRightRadius: ReactPropTypes.number,
   borderBottomStartRadius: ReactPropTypes.number,
   borderBottomEndRadius: ReactPropTypes.number,
-  borderStyle: (ReactPropTypes.oneOf([
-    'solid',
-    'dotted',
-    'dashed',
-  ]): React$PropType$Primitive<'solid' | 'dotted' | 'dashed'>),
+  borderStyle: ReactPropTypes.oneOf(['solid', 'dotted', 'dashed']),
   borderWidth: ReactPropTypes.number,
   borderTopWidth: ReactPropTypes.number,
   borderRightWidth: ReactPropTypes.number,

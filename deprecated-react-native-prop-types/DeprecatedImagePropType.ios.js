@@ -4,7 +4,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow
  * @format
  */
 
@@ -17,11 +16,9 @@ const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
 const PropTypes = require('prop-types');
 
 module.exports = {
-  style: (DeprecatedStyleSheetPropType(
-    DeprecatedImageStylePropTypes,
-  ): ReactPropsCheckType),
+  style: DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes),
   source: DeprecatedImageSourcePropType,
-  defaultSource: (PropTypes.oneOfType([
+  defaultSource: PropTypes.oneOfType([
     PropTypes.shape({
       uri: PropTypes.string,
       width: PropTypes.number,
@@ -29,16 +26,7 @@ module.exports = {
       scale: PropTypes.number,
     }),
     PropTypes.number,
-  ]): React$PropType$Primitive<
-    | {
-        height?: number,
-        scale?: number,
-        uri?: string,
-        width?: number,
-        ...
-      }
-    | number,
-  >),
+  ]),
 
   accessible: PropTypes.bool,
 
@@ -48,21 +36,15 @@ module.exports = {
 
   capInsets: DeprecatedEdgeInsetsPropType,
 
-  resizeMethod: (PropTypes.oneOf([
-    'auto',
-    'resize',
-    'scale',
-  ]): React$PropType$Primitive<'auto' | 'resize' | 'scale'>),
+  resizeMethod: PropTypes.oneOf(['auto', 'resize', 'scale']),
 
-  resizeMode: (PropTypes.oneOf([
+  resizeMode: PropTypes.oneOf([
     'cover',
     'contain',
     'stretch',
     'repeat',
     'center',
-  ]): React$PropType$Primitive<
-    'cover' | 'contain' | 'stretch' | 'repeat' | 'center',
-  >),
+  ]),
 
   testID: PropTypes.string,
 

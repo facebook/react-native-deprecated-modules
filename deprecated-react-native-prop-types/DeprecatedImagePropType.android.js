@@ -4,7 +4,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow
  * @format
  */
 
@@ -17,13 +16,11 @@ const PropTypes = require('prop-types');
 
 const DeprecatedImagePropType = {
   ...DeprecatedViewPropTypes,
-  style: (DeprecatedStyleSheetPropType(
-    DeprecatedImageStylePropTypes,
-  ): ReactPropsCheckType),
+  style: DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes),
   /**
    * See https://reactnative.dev/docs/image.html#source
    */
-  source: (PropTypes.oneOfType([
+  source: PropTypes.oneOfType([
     PropTypes.shape({
       uri: PropTypes.string,
       headers: PropTypes.objectOf(PropTypes.string),
@@ -39,21 +36,7 @@ const DeprecatedImagePropType = {
         headers: PropTypes.objectOf(PropTypes.string),
       }),
     ),
-  ]): React$PropType$Primitive<
-    | {
-        headers?: {[string]: string, ...},
-        uri?: string,
-        ...
-      }
-    | number
-    | Array<{
-        headers?: {[string]: string, ...},
-        height?: number,
-        uri?: string,
-        width?: number,
-        ...
-      }>,
-  >),
+  ]),
   /**
    * blurRadius: the blur radius of the blur filter added to the image
    *
@@ -67,13 +50,13 @@ const DeprecatedImagePropType = {
   /**
    * See https://reactnative.dev/docs/image.html#loadingindicatorsource
    */
-  loadingIndicatorSource: (PropTypes.oneOfType([
+  loadingIndicatorSource: PropTypes.oneOfType([
     PropTypes.shape({
       uri: PropTypes.string,
     }),
     // Opaque type returned by require('./image.jpg')
     PropTypes.number,
-  ]): React$PropType$Primitive<{uri?: string, ...} | number>),
+  ]),
   progressiveRenderingEnabled: PropTypes.bool,
   fadeDuration: PropTypes.number,
   /**
@@ -106,26 +89,20 @@ const DeprecatedImagePropType = {
    *
    * See https://reactnative.dev/docs/image.html#resizemethod
    */
-  resizeMethod: (PropTypes.oneOf([
-    'auto',
-    'resize',
-    'scale',
-  ]): React$PropType$Primitive<'auto' | 'resize' | 'scale'>),
+  resizeMethod: PropTypes.oneOf(['auto', 'resize', 'scale']),
   /**
    * Determines how to resize the image when the frame doesn't match the raw
    * image dimensions.
    *
    * See https://reactnative.dev/docs/image.html#resizemode
    */
-  resizeMode: (PropTypes.oneOf([
+  resizeMode: PropTypes.oneOf([
     'cover',
     'contain',
     'stretch',
     'repeat',
     'center',
-  ]): React$PropType$Primitive<
-    'cover' | 'contain' | 'stretch' | 'repeat' | 'center',
-  >),
+  ]),
 };
 
 module.exports = DeprecatedImagePropType;

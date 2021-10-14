@@ -8,11 +8,16 @@
     "url": "git@github.com:facebookarchive/react-native-deprecated-modules.git"
   },
   "dependencies": {
+    "@react-native/normalize-color": "*",
     "invariant": "*",
     "prop-types": "*"
   },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+  "prettier": {
+    "requirePragma": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true,
+    "arrowParens": "avoid"
   }
 }
