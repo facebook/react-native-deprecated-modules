@@ -75,9 +75,11 @@ const DeprecatedTransformPropTypes = {
  */
 function deprecatedPropType(propType, explanation) {
   return function validate(props, propName, componentName, ...rest) {
-    console.warn(
-      `\`${propName}\` supplied to \`${componentName}\` has been deprecated. ${explanation}`,
-    );
+    if (props[propName] !== undefined) {
+      console.warn(
+        `\`${propName}\` supplied to \`${componentName}\` has been deprecated. ${explanation}`,
+      );
+    }
 
     return propType(props, propName, componentName, ...rest);
   };
