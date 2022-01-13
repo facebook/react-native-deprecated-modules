@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "git@github.com:facebookarchive/react-native-deprecated-modules.git"
+    "url": "git@github.com:facebook/react-native-deprecated-modules.git"
   },
   "dependencies": {
     "deprecated-react-native-listview": "*"
