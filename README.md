@@ -24,3 +24,9 @@ We know you are busy making your apps awesome. Therefore we are releasing the ol
     />
 
 But once you have a moment, please migrate away from the deprecated modules :) In most cases it should be easy!
+
+## 📄 License
+
+React Native is MIT licensed, as found in the [LICENSE][l] file.
+
+[l]: https://github.com/facebook/react-native-deprecated-modules/blob/HEAD/LICENSE

@@ -2,7 +2,7 @@
   "name": "deprecated-react-native-swipeable-listview",
   "version": "0.0.1",
   "description": "",
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:facebook/react-native-deprecated-modules.git"

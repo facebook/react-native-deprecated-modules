@@ -2,7 +2,7 @@
   "name": "deprecated-react-native-listview",
   "version": "0.0.7",
   "description": "This package contains the deprecated ListView module.",
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:facebook/react-native-deprecated-modules.git"
