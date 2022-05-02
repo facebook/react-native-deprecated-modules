@@ -15,7 +15,6 @@ const ListViewDataSource = require('./ListViewDataSource');
 const React = require('react');
 const ReactNative = require('react-native');
 const Platform = ReactNative.Platform;
-const RCTScrollViewManager = ReactNative.NativeModules.ScrollViewManager;
 const ScrollView = ReactNative.ScrollView;
 const ScrollResponderMixin = require('./ScrollResponder').Mixin;
 const StaticRenderer = require('./StaticRenderer');
@@ -360,14 +359,6 @@ const ListView = createReactClass({
     this._rafIds = [];
   },
 
-  componentDidMount: function() {
-    // do this in animation frame until componentDidMount actually runs after
-    // the component is laid out
-    this._requestAnimationFrame(() => {
-      this._measureAndUpdateScrollProps();
-    });
-  },
-
   UNSAFE_componentWillReceiveProps: function(nextProps: Object) {
     if (
       this.props.dataSource !== nextProps.dataSource ||
@@ -388,12 +379,6 @@ const ListView = createReactClass({
         () => this._renderMoreRowsIfNeeded(),
       );
     }
-  },
-
-  componentDidUpdate: function() {
-    this._requestAnimationFrame(() => {
-      this._measureAndUpdateScrollProps();
-    });
   },
 
   _onRowHighlighted: function(sectionID: string, rowID: string) {
@@ -542,30 +527,6 @@ const ListView = createReactClass({
    * Private methods
    */
 
-  _requestAnimationFrame: function(fn: () => void): void {
-    const rafId = requestAnimationFrame(() => {
-      this._rafIds = this._rafIds.filter(id => id !== rafId);
-      fn();
-    });
-    this._rafIds.push(rafId);
-  },
-
-  _measureAndUpdateScrollProps: function() {
-    const scrollComponent = this.getScrollResponder();
-    if (!scrollComponent || !scrollComponent.getInnerViewNode) {
-      return;
-    }
-
-    // RCTScrollViewManager.calculateChildFrames is not available on
-    // every platform
-    RCTScrollViewManager &&
-      RCTScrollViewManager.calculateChildFrames &&
-      RCTScrollViewManager.calculateChildFrames(
-        ReactNative.findNodeHandle(scrollComponent),
-        this._updateVisibleRows,
-      );
-  },
-
   _setScrollComponentRef: function(scrollComponent) {
     this._scrollComponent = scrollComponent;
   },
@@ -644,7 +605,6 @@ const ListView = createReactClass({
         };
       },
       () => {
-        this._measureAndUpdateScrollProps();
         this._prevRenderedRowsCount = this.state.curRenderedRowsCount;
       },
     );
