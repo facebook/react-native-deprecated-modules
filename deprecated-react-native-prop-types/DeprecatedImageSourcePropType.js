@@ -15,20 +15,20 @@ const PropTypes = require('prop-types');
  * @see facebook/react-native/Libraries/Image/ImageSource.js
  */
 const ImageURISourcePropType = PropTypes.shape({
-  uri: PropTypes.string,
-  bundle: PropTypes.string,
-  method: PropTypes.string,
-  headers: PropTypes.objectOf(PropTypes.string),
   body: PropTypes.string,
+  bundle: PropTypes.string,
   cache: PropTypes.oneOf([
     'default',
-    'reload',
     'force-cache',
     'only-if-cached',
+    'reload',
   ]),
-  width: PropTypes.number,
+  headers: PropTypes.objectOf(PropTypes.string),
   height: PropTypes.number,
+  method: PropTypes.string,
   scale: PropTypes.number,
+  uri: PropTypes.string,
+  width: PropTypes.number,
 });
 
 const ImageSourcePropType = PropTypes.oneOfType([

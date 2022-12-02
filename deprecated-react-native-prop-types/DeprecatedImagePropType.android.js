@@ -19,38 +19,21 @@ const PropTypes = require('prop-types');
  */
 const DeprecatedImagePropType = {
   ...DeprecatedViewPropTypes,
-  style: DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes),
-  source: PropTypes.oneOfType([
-    PropTypes.shape({
-      uri: PropTypes.string,
-      headers: PropTypes.objectOf(PropTypes.string),
-    }),
-    PropTypes.number,
-    PropTypes.arrayOf(
-      PropTypes.shape({
-        uri: PropTypes.string,
-        width: PropTypes.number,
-        height: PropTypes.number,
-        headers: PropTypes.objectOf(PropTypes.string),
-      }),
-    ),
-  ]),
   blurRadius: PropTypes.number,
   defaultSource: PropTypes.number,
+  fadeDuration: PropTypes.number,
+  internal_analyticTag: PropTypes.string,
   loadingIndicatorSource: PropTypes.oneOfType([
     PropTypes.shape({
       uri: PropTypes.string,
     }),
     PropTypes.number,
   ]),
-  progressiveRenderingEnabled: PropTypes.bool,
-  fadeDuration: PropTypes.number,
-  internal_analyticTag: PropTypes.string,
-  onLoadStart: PropTypes.func,
   onError: PropTypes.func,
   onLoad: PropTypes.func,
   onLoadEnd: PropTypes.func,
-  testID: PropTypes.string,
+  onLoadStart: PropTypes.func,
+  progressiveRenderingEnabled: PropTypes.bool,
   resizeMethod: PropTypes.oneOf(['auto', 'resize', 'scale']),
   resizeMode: PropTypes.oneOf([
     'cover',
@@ -59,6 +42,23 @@ const DeprecatedImagePropType = {
     'repeat',
     'center',
   ]),
+  source: PropTypes.oneOfType([
+    PropTypes.shape({
+      headers: PropTypes.objectOf(PropTypes.string),
+      uri: PropTypes.string,
+    }),
+    PropTypes.number,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        headers: PropTypes.objectOf(PropTypes.string),
+        height: PropTypes.number,
+        uri: PropTypes.string,
+        width: PropTypes.number,
+      }),
+    ),
+  ]),
+  style: DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes),
+  testID: PropTypes.string,
 };
 
 module.exports = DeprecatedImagePropType;

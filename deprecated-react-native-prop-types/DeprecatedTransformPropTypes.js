@@ -11,7 +11,7 @@
 
 const ReactPropTypes = require('prop-types');
 
-const TransformMatrixPropType = function(props, propName, componentName) {
+const TransformMatrixPropType = function (props, propName, componentName) {
   if (props[propName]) {
     return new Error(
       'The transformMatrix style property is deprecated. ' +
@@ -20,7 +20,7 @@ const TransformMatrixPropType = function(props, propName, componentName) {
   }
 };
 
-const DecomposedMatrixPropType = function(props, propName, componentName) {
+const DecomposedMatrixPropType = function (props, propName, componentName) {
   if (props[propName]) {
     return new Error(
       'The decomposedMatrix style property is deprecated. ' +
@@ -33,6 +33,19 @@ const DecomposedMatrixPropType = function(props, propName, componentName) {
  * @see facebook/react-native/Libraries/StyleSheet/private/_TransformStyle.js
  */
 const DeprecatedTransformPropTypes = {
+  decomposedMatrix: DecomposedMatrixPropType,
+  rotation: deprecatedPropType(
+    ReactPropTypes.number,
+    'Use the transform prop instead.',
+  ),
+  scaleX: deprecatedPropType(
+    ReactPropTypes.number,
+    'Use the transform prop instead.',
+  ),
+  scaleY: deprecatedPropType(
+    ReactPropTypes.number,
+    'Use the transform prop instead.',
+  ),
   transform: ReactPropTypes.arrayOf(
     ReactPropTypes.oneOfType([
       ReactPropTypes.shape({perspective: ReactPropTypes.number}),
@@ -43,26 +56,13 @@ const DeprecatedTransformPropTypes = {
       ReactPropTypes.shape({scale: ReactPropTypes.number}),
       ReactPropTypes.shape({scaleX: ReactPropTypes.number}),
       ReactPropTypes.shape({scaleY: ReactPropTypes.number}),
-      ReactPropTypes.shape({translateX: ReactPropTypes.number}),
-      ReactPropTypes.shape({translateY: ReactPropTypes.number}),
       ReactPropTypes.shape({skewX: ReactPropTypes.string}),
       ReactPropTypes.shape({skewY: ReactPropTypes.string}),
+      ReactPropTypes.shape({translateX: ReactPropTypes.number}),
+      ReactPropTypes.shape({translateY: ReactPropTypes.number}),
     ]),
   ),
   transformMatrix: TransformMatrixPropType,
-  decomposedMatrix: DecomposedMatrixPropType,
-  scaleX: deprecatedPropType(
-    ReactPropTypes.number,
-    'Use the transform prop instead.',
-  ),
-  scaleY: deprecatedPropType(
-    ReactPropTypes.number,
-    'Use the transform prop instead.',
-  ),
-  rotation: deprecatedPropType(
-    ReactPropTypes.number,
-    'Use the transform prop instead.',
-  ),
   translateX: deprecatedPropType(
     ReactPropTypes.number,
     'Use the transform prop instead.',

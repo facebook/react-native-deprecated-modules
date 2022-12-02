@@ -19,30 +19,30 @@ const stylePropType = DeprecatedStyleSheetPropType(
   DeprecatedTextStylePropTypes,
 );
 
-const DataDetectorTypes = ['phoneNumber', 'link', 'email', 'none', 'all'];
+const DataDetectorTypes = ['all', 'email', 'link', 'none', 'phoneNumber'];
 
 /**
  * @see facebook/react-native/Libraries/Text/TextProps.js
  */
 module.exports = {
-  ellipsizeMode: PropTypes.oneOf(['head', 'middle', 'tail', 'clip']),
+  accessible: PropTypes.bool,
+  adjustsFontSizeToFit: PropTypes.bool,
+  allowFontScaling: PropTypes.bool,
+  dataDetectorType: PropTypes.oneOf(DataDetectorTypes),
+  disabled: PropTypes.bool,
+  ellipsizeMode: PropTypes.oneOf(['clip', 'head', 'middle', 'tail']),
+  maxFontSizeMultiplier: PropTypes.number,
+  minimumFontScale: PropTypes.number,
+  nativeID: PropTypes.string,
   numberOfLines: PropTypes.number,
-  textBreakStrategy: PropTypes.oneOf(['simple', 'highQuality', 'balanced']),
   onLayout: PropTypes.func,
-  onPress: PropTypes.func,
   onLongPress: PropTypes.func,
+  onPress: PropTypes.func,
   pressRetentionOffset: DeprecatedEdgeInsetsPropType,
   selectable: PropTypes.bool,
   selectionColor: DeprecatedColorPropType,
-  suppressHighlighting: PropTypes.bool,
   style: stylePropType,
+  suppressHighlighting: PropTypes.bool,
   testID: PropTypes.string,
-  nativeID: PropTypes.string,
-  allowFontScaling: PropTypes.bool,
-  maxFontSizeMultiplier: PropTypes.number,
-  accessible: PropTypes.bool,
-  adjustsFontSizeToFit: PropTypes.bool,
-  minimumFontScale: PropTypes.number,
-  disabled: PropTypes.bool,
-  dataDetectorType: PropTypes.oneOf(DataDetectorTypes),
+  textBreakStrategy: PropTypes.oneOf(['balanced', 'highQuality', 'simple']),
 };

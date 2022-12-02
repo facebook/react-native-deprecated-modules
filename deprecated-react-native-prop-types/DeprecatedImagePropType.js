@@ -19,8 +19,10 @@ const PropTypes = require('prop-types');
  * @see facebook/react-native/Libraries/Image/ImageProps.js
  */
 module.exports = {
-  style: DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes),
-  source: DeprecatedImageSourcePropType,
+  accessibilityLabel: PropTypes.node,
+  accessible: PropTypes.bool,
+  blurRadius: PropTypes.number,
+  capInsets: DeprecatedEdgeInsetsPropType,
   defaultSource: PropTypes.oneOfType([
     PropTypes.shape({
       uri: PropTypes.string,
@@ -30,17 +32,14 @@ module.exports = {
     }),
     PropTypes.number,
   ]),
-
-  accessible: PropTypes.bool,
-
-  accessibilityLabel: PropTypes.node,
-
-  blurRadius: PropTypes.number,
-
-  capInsets: DeprecatedEdgeInsetsPropType,
-
+  onError: PropTypes.func,
+  onLayout: PropTypes.func,
+  onLoad: PropTypes.func,
+  onLoadEnd: PropTypes.func,
+  onLoadStart: PropTypes.func,
+  onPartialLoad: PropTypes.func,
+  onProgress: PropTypes.func,
   resizeMethod: PropTypes.oneOf(['auto', 'resize', 'scale']),
-
   resizeMode: PropTypes.oneOf([
     'cover',
     'contain',
@@ -48,20 +47,7 @@ module.exports = {
     'repeat',
     'center',
   ]),
-
+  source: DeprecatedImageSourcePropType,
+  style: DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes),
   testID: PropTypes.string,
-
-  onLayout: PropTypes.func,
-
-  onLoadStart: PropTypes.func,
-
-  onProgress: PropTypes.func,
-
-  onError: PropTypes.func,
-
-  onPartialLoad: PropTypes.func,
-
-  onLoad: PropTypes.func,
-
-  onLoadEnd: PropTypes.func,
 };

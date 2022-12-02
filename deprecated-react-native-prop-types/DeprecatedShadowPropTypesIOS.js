@@ -21,8 +21,8 @@ const ReactPropTypes = require('prop-types');
 const DeprecatedShadowPropTypesIOS = {
   shadowColor: DeprecatedColorPropType,
   shadowOffset: ReactPropTypes.shape({
-    width: ReactPropTypes.number,
     height: ReactPropTypes.number,
+    width: ReactPropTypes.number,
   }),
   shadowOpacity: ReactPropTypes.number,
   shadowRadius: ReactPropTypes.number,

@@ -18,14 +18,20 @@ const ReactPropTypes = require('prop-types');
  */
 const DeprecatedTextStylePropTypes = {
   ...DeprecatedViewStylePropTypes,
-
   color: DeprecatedColorPropType,
   fontFamily: ReactPropTypes.string,
   fontSize: ReactPropTypes.number,
-  fontStyle: ReactPropTypes.oneOf(['normal', 'italic']),
+  fontStyle: ReactPropTypes.oneOf(['italic', 'normal']),
+  fontVariant: ReactPropTypes.arrayOf(
+    ReactPropTypes.oneOf([
+      'lining-nums',
+      'oldstyle-nums',
+      'proportional-nums',
+      'small-caps',
+      'tabular-nums',
+    ]),
+  ),
   fontWeight: ReactPropTypes.oneOf([
-    'normal' /*default*/,
-    'bold',
     '100',
     '200',
     '300',
@@ -35,56 +41,49 @@ const DeprecatedTextStylePropTypes = {
     '700',
     '800',
     '900',
+    'bold',
+    'normal' /*default*/,
   ]),
-  fontVariant: ReactPropTypes.arrayOf(
-    ReactPropTypes.oneOf([
-      'small-caps',
-      'oldstyle-nums',
-      'lining-nums',
-      'tabular-nums',
-      'proportional-nums',
-    ]),
-  ),
-  textShadowOffset: ReactPropTypes.shape({
-    width: ReactPropTypes.number,
-    height: ReactPropTypes.number,
-  }),
-  textShadowRadius: ReactPropTypes.number,
-  textShadowColor: DeprecatedColorPropType,
+  includeFontPadding: ReactPropTypes.bool,
   letterSpacing: ReactPropTypes.number,
   lineHeight: ReactPropTypes.number,
   textAlign: ReactPropTypes.oneOf([
     'auto' /*default*/,
-    'left',
-    'right',
     'center',
     'justify',
+    'left',
+    'right',
   ]),
   textAlignVertical: ReactPropTypes.oneOf([
     'auto' /*default*/,
-    'top',
     'bottom',
     'center',
-  ]),
-  includeFontPadding: ReactPropTypes.bool,
-  textDecorationLine: ReactPropTypes.oneOf([
-    'none' /*default*/,
-    'underline',
-    'line-through',
-    'underline line-through',
-  ]),
-  textDecorationStyle: ReactPropTypes.oneOf([
-    'solid' /*default*/,
-    'double',
-    'dotted',
-    'dashed',
+    'top',
   ]),
   textDecorationColor: DeprecatedColorPropType,
-  textTransform: ReactPropTypes.oneOf([
+  textDecorationLine: ReactPropTypes.oneOf([
+    'line-through',
     'none' /*default*/,
+    'underline line-through',
+    'underline',
+  ]),
+  textDecorationStyle: ReactPropTypes.oneOf([
+    'dashed',
+    'dotted',
+    'double',
+    'solid' /*default*/,
+  ]),
+  textShadowColor: DeprecatedColorPropType,
+  textShadowOffset: ReactPropTypes.shape({
+    height: ReactPropTypes.number,
+    width: ReactPropTypes.number,
+  }),
+  textShadowRadius: ReactPropTypes.number,
+  textTransform: ReactPropTypes.oneOf([
     'capitalize',
-    'uppercase',
     'lowercase',
+    'none' /*default*/,
+    'uppercase',
   ]),
   writingDirection: ReactPropTypes.oneOf(['auto' /*default*/, 'ltr', 'rtl']),
 };

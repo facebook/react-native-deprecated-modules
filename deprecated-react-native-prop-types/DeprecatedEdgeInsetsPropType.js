@@ -15,10 +15,10 @@ const PropTypes = require('prop-types');
  * @see facebook/react-native/Libraries/StyleSheet/Rect.js
  */
 const DeprecatedEdgeInsetsPropType = PropTypes.shape({
-  top: PropTypes.number,
-  left: PropTypes.number,
   bottom: PropTypes.number,
+  left: PropTypes.number,
   right: PropTypes.number,
+  top: PropTypes.number,
 });
 
 module.exports = DeprecatedEdgeInsetsPropType;

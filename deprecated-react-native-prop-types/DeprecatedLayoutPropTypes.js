@@ -15,46 +15,71 @@ const ReactPropTypes = require('prop-types');
  * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
  */
 const LayoutPropTypes = {
-  display: ReactPropTypes.oneOf(['none', 'flex']),
-  width: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
+  alignContent: ReactPropTypes.oneOf([
+    'center',
+    'flex-end',
+    'flex-start',
+    'space-around',
+    'space-between',
+    'stretch',
   ]),
-  height: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
+  alignItems: ReactPropTypes.oneOf([
+    'baseline',
+    'center',
+    'flex-end',
+    'flex-start',
+    'stretch',
   ]),
-  start: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
+  alignSelf: ReactPropTypes.oneOf([
+    'auto',
+    'baseline',
+    'center',
+    'flex-end',
+    'flex-start',
+    'stretch',
   ]),
-  end: ReactPropTypes.oneOfType([ReactPropTypes.number, ReactPropTypes.string]),
-  top: ReactPropTypes.oneOfType([ReactPropTypes.number, ReactPropTypes.string]),
-  left: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
-  ]),
-  right: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
-  ]),
+  aspectRatio: ReactPropTypes.number,
+  borderBottomWidth: ReactPropTypes.number,
+  borderEndWidth: ReactPropTypes.number,
+  borderLeftWidth: ReactPropTypes.number,
+  borderRightWidth: ReactPropTypes.number,
+  borderStartWidth: ReactPropTypes.number,
+  borderTopWidth: ReactPropTypes.number,
+  borderWidth: ReactPropTypes.number,
   bottom: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
-  minWidth: ReactPropTypes.oneOfType([
+  direction: ReactPropTypes.oneOf(['inherit', 'ltr', 'rtl']),
+  display: ReactPropTypes.oneOf(['flex', 'none']),
+  end: ReactPropTypes.oneOfType([ReactPropTypes.number, ReactPropTypes.string]),
+  flex: ReactPropTypes.number,
+  flexBasis: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
-  maxWidth: ReactPropTypes.oneOfType([
+  flexDirection: ReactPropTypes.oneOf([
+    'column',
+    'column-reverse',
+    'row',
+    'row-reverse',
+  ]),
+  flexGrow: ReactPropTypes.number,
+  flexShrink: ReactPropTypes.number,
+  flexWrap: ReactPropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+  height: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
-  minHeight: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
+  justifyContent: ReactPropTypes.oneOf([
+    'center',
+    'flex-end',
+    'flex-start',
+    'space-around',
+    'space-between',
+    'space-evenly',
   ]),
-  maxHeight: ReactPropTypes.oneOfType([
+  left: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
@@ -62,19 +87,15 @@ const LayoutPropTypes = {
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
-  marginVertical: ReactPropTypes.oneOfType([
+  marginBottom: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
+  marginEnd: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
   marginHorizontal: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
-  ]),
-  marginTop: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
-  ]),
-  marginBottom: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
@@ -90,27 +111,44 @@ const LayoutPropTypes = {
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
-  marginEnd: ReactPropTypes.oneOfType([
+  marginTop: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
+  marginVertical: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
+  maxHeight: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
+  maxWidth: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
+  minHeight: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
+  minWidth: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
+  overflow: ReactPropTypes.oneOf(['hidden', 'scroll', 'visible']),
   padding: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
-  paddingVertical: ReactPropTypes.oneOfType([
+  paddingBottom: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
+  paddingEnd: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
   paddingHorizontal: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
-  ]),
-  paddingTop: ReactPropTypes.oneOfType([
-    ReactPropTypes.number,
-    ReactPropTypes.string,
-  ]),
-  paddingBottom: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
@@ -126,67 +164,29 @@ const LayoutPropTypes = {
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
-  paddingEnd: ReactPropTypes.oneOfType([
+  paddingTop: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
-  borderWidth: ReactPropTypes.number,
-  borderTopWidth: ReactPropTypes.number,
-  borderStartWidth: ReactPropTypes.number,
-  borderEndWidth: ReactPropTypes.number,
-  borderRightWidth: ReactPropTypes.number,
-  borderBottomWidth: ReactPropTypes.number,
-  borderLeftWidth: ReactPropTypes.number,
+  paddingVertical: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
   position: ReactPropTypes.oneOf(['absolute', 'relative']),
-  flexDirection: ReactPropTypes.oneOf([
-    'row',
-    'row-reverse',
-    'column',
-    'column-reverse',
-  ]),
-  flexWrap: ReactPropTypes.oneOf(['wrap', 'nowrap', 'wrap-reverse']),
-  justifyContent: ReactPropTypes.oneOf([
-    'flex-start',
-    'flex-end',
-    'center',
-    'space-between',
-    'space-around',
-    'space-evenly',
-  ]),
-  alignItems: ReactPropTypes.oneOf([
-    'flex-start',
-    'flex-end',
-    'center',
-    'stretch',
-    'baseline',
-  ]),
-  alignSelf: ReactPropTypes.oneOf([
-    'auto',
-    'flex-start',
-    'flex-end',
-    'center',
-    'stretch',
-    'baseline',
-  ]),
-  alignContent: ReactPropTypes.oneOf([
-    'flex-start',
-    'flex-end',
-    'center',
-    'stretch',
-    'space-between',
-    'space-around',
-  ]),
-  overflow: ReactPropTypes.oneOf(['visible', 'hidden', 'scroll']),
-  flex: ReactPropTypes.number,
-  flexGrow: ReactPropTypes.number,
-  flexShrink: ReactPropTypes.number,
-  flexBasis: ReactPropTypes.oneOfType([
+  right: ReactPropTypes.oneOfType([
     ReactPropTypes.number,
     ReactPropTypes.string,
   ]),
-  aspectRatio: ReactPropTypes.number,
+  start: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
+  top: ReactPropTypes.oneOfType([ReactPropTypes.number, ReactPropTypes.string]),
+  width: ReactPropTypes.oneOfType([
+    ReactPropTypes.number,
+    ReactPropTypes.string,
+  ]),
   zIndex: ReactPropTypes.number,
-  direction: ReactPropTypes.oneOf(['inherit', 'ltr', 'rtl']),
 };
 
 module.exports = LayoutPropTypes;
