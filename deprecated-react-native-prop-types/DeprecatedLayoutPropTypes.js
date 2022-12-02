@@ -11,6 +11,9 @@
 
 const ReactPropTypes = require('prop-types');
 
+/**
+ * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
+ */
 const LayoutPropTypes = {
   display: ReactPropTypes.oneOf(['none', 'flex']),
   width: ReactPropTypes.oneOfType([

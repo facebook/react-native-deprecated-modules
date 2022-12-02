@@ -29,6 +29,9 @@ const DecomposedMatrixPropType = function(props, propName, componentName) {
   }
 };
 
+/**
+ * @see facebook/react-native/Libraries/StyleSheet/private/_TransformStyle.js
+ */
 const DeprecatedTransformPropTypes = {
   transform: ReactPropTypes.arrayOf(
     ReactPropTypes.oneOfType([

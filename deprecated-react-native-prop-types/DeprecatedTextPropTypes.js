@@ -21,6 +21,9 @@ const stylePropType = DeprecatedStyleSheetPropType(
 
 const DataDetectorTypes = ['phoneNumber', 'link', 'email', 'none', 'all'];
 
+/**
+ * @see facebook/react-native/Libraries/Text/TextProps.js
+ */
 module.exports = {
   /**
    * When `numberOfLines` is set, this prop defines how text will be

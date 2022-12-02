@@ -20,6 +20,9 @@ const stylePropType = DeprecatedStyleSheetPropType(
   DeprecatedViewStylePropTypes,
 );
 
+/**
+ * @see facebook/react-native/Libraries/Components/View/ViewPropTypes.js
+ */
 module.exports = {
   /**
    * When `true`, indicates that the view is an accessibility element.

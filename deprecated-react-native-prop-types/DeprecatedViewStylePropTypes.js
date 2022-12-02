@@ -16,7 +16,7 @@ const DeprecatedTransformPropTypes = require('./DeprecatedTransformPropTypes');
 const ReactPropTypes = require('prop-types');
 
 /**
- * Warning: Some of these properties may not be supported in all releases.
+ * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
  */
 const DeprecatedViewStylePropTypes = {
   ...DeprecatedLayoutPropTypes,

@@ -15,6 +15,9 @@ const DeprecatedShadowPropTypesIOS = require('./DeprecatedShadowPropTypesIOS');
 const DeprecatedTransformPropTypes = require('./DeprecatedTransformPropTypes');
 const ReactPropTypes = require('prop-types');
 
+/**
+ * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
+ */
 const ImageStylePropTypes = {
   ...DeprecatedLayoutPropTypes,
   ...DeprecatedShadowPropTypesIOS,

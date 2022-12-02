@@ -11,6 +11,9 @@
 
 const normalizeColor = require('@react-native/normalize-color');
 
+/**
+ * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
+ */
 const colorPropType = function(
   isRequired,
   props,

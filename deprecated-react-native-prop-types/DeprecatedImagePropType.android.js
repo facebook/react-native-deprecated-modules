@@ -14,6 +14,9 @@ const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
 const DeprecatedViewPropTypes = require('./DeprecatedViewPropTypes');
 const PropTypes = require('prop-types');
 
+/**
+ * @see facebook/react-native/Libraries/Image/ImageProps.js
+ */
 const DeprecatedImagePropType = {
   ...DeprecatedViewPropTypes,
   style: DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes),

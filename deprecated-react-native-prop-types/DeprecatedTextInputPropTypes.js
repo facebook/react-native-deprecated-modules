@@ -23,6 +23,9 @@ const DataDetectorTypes = [
   'all',
 ];
 
+/**
+ * @see facebook/react-native/Libraries/TextInput/TextInput.js
+ */
 module.exports = {
   ...DeprecatedViewPropTypes,
   /**

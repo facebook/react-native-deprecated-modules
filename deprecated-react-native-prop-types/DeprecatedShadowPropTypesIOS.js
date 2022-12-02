@@ -9,9 +9,15 @@
 
 'use strict';
 
+/**
+ * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
+ */
 const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const ReactPropTypes = require('prop-types');
 
+/**
+ * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
+ */
 const DeprecatedShadowPropTypesIOS = {
   shadowColor: DeprecatedColorPropType,
   shadowOffset: ReactPropTypes.shape({

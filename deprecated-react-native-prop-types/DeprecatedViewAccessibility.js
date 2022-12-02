@@ -9,6 +9,9 @@
 
 'use strict';
 
+/**
+ * @see facebook/react-native/Libraries/Components/View/ViewAccessibility.js
+ */
 module.exports = {
   // This must be kept in sync with the AccessibilityRolesMask in RCTViewManager.m
   DeprecatedAccessibilityRoles: [

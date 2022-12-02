@@ -11,6 +11,9 @@
 
 const PropTypes = require('prop-types');
 
+/**
+ * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
+ */
 const PointPropType = PropTypes.shape({
   x: PropTypes.number,
   y: PropTypes.number,

@@ -13,6 +13,9 @@ const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const DeprecatedViewStylePropTypes = require('./DeprecatedViewStylePropTypes');
 const ReactPropTypes = require('prop-types');
 
+/**
+ * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
+ */
 const DeprecatedTextStylePropTypes = {
   ...DeprecatedViewStylePropTypes,
 
