@@ -13,32 +13,32 @@ const DeprecatedEdgeInsetsPropType = require('./DeprecatedEdgeInsetsPropType');
 const DeprecatedImageSourcePropType = require('./DeprecatedImageSourcePropType');
 const DeprecatedImageStylePropTypes = require('./DeprecatedImageStylePropTypes');
 const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
+const DeprecatedViewPropTypes = require('./DeprecatedViewPropTypes');
 const PropTypes = require('prop-types');
 
 /**
  * @see facebook/react-native/Libraries/Image/ImageProps.js
  */
-module.exports = {
-  accessibilityLabel: PropTypes.node,
-  accessible: PropTypes.bool,
+const DeprecatedImagePropType = {
+  ...DeprecatedViewPropTypes,
   blurRadius: PropTypes.number,
   capInsets: DeprecatedEdgeInsetsPropType,
-  defaultSource: PropTypes.oneOfType([
+  defaultSource: DeprecatedImageSourcePropType,
+  fadeDuration: PropTypes.number,
+  internal_analyticTag: PropTypes.string,
+  loadingIndicatorSource: PropTypes.oneOfType([
     PropTypes.shape({
       uri: PropTypes.string,
-      width: PropTypes.number,
-      height: PropTypes.number,
-      scale: PropTypes.number,
     }),
     PropTypes.number,
   ]),
   onError: PropTypes.func,
-  onLayout: PropTypes.func,
   onLoad: PropTypes.func,
   onLoadEnd: PropTypes.func,
   onLoadStart: PropTypes.func,
   onPartialLoad: PropTypes.func,
   onProgress: PropTypes.func,
+  progressiveRenderingEnabled: PropTypes.bool,
   resizeMethod: PropTypes.oneOf(['auto', 'resize', 'scale']),
   resizeMode: PropTypes.oneOf([
     'cover',
@@ -51,3 +51,5 @@ module.exports = {
   style: DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes),
   testID: PropTypes.string,
 };
+
+module.exports = DeprecatedImagePropType;
