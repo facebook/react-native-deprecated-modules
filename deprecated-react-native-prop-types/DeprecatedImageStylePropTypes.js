@@ -13,29 +13,30 @@ const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const DeprecatedLayoutPropTypes = require('./DeprecatedLayoutPropTypes');
 const DeprecatedShadowPropTypesIOS = require('./DeprecatedShadowPropTypesIOS');
 const DeprecatedTransformPropTypes = require('./DeprecatedTransformPropTypes');
-const ReactPropTypes = require('prop-types');
+const PropTypes = require('prop-types');
 
 /**
  * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
  */
-const ImageStylePropTypes = {
+const DeprecatedImageStylePropTypes = {
   ...DeprecatedLayoutPropTypes,
   ...DeprecatedShadowPropTypesIOS,
   ...DeprecatedTransformPropTypes,
-  backfaceVisibility: ReactPropTypes.oneOf(['visible', 'hidden']),
+  backfaceVisibility: PropTypes.oneOf(['hidden', 'visible']),
   backgroundColor: DeprecatedColorPropType,
-  borderBottomLeftRadius: ReactPropTypes.number,
-  borderBottomRightRadius: ReactPropTypes.number,
+  borderBottomLeftRadius: PropTypes.number,
+  borderBottomRightRadius: PropTypes.number,
   borderColor: DeprecatedColorPropType,
-  borderRadius: ReactPropTypes.number,
-  borderTopLeftRadius: ReactPropTypes.number,
-  borderTopRightRadius: ReactPropTypes.number,
-  borderWidth: ReactPropTypes.number,
-  opacity: ReactPropTypes.number,
-  overflow: ReactPropTypes.oneOf(['visible', 'hidden']),
-  overlayColor: ReactPropTypes.string,
+  borderRadius: PropTypes.number,
+  borderTopLeftRadius: PropTypes.number,
+  borderTopRightRadius: PropTypes.number,
+  borderWidth: PropTypes.number,
+  objectFit: PropTypes.oneOf(['contain', 'cover', 'fill', 'scale-down']),
+  opacity: PropTypes.number,
+  overflow: PropTypes.oneOf(['hidden', 'visible']),
+  overlayColor: PropTypes.string,
   tintColor: DeprecatedColorPropType,
-  resizeMode: ReactPropTypes.oneOf([
+  resizeMode: PropTypes.oneOf([
     'center',
     'contain',
     'cover',
@@ -44,4 +45,4 @@ const ImageStylePropTypes = {
   ]),
 };
 
-module.exports = ImageStylePropTypes;
+module.exports = DeprecatedImageStylePropTypes;
