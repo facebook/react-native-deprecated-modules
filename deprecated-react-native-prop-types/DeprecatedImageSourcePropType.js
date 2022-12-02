@@ -33,9 +33,7 @@ const ImageURISourcePropType = PropTypes.shape({
 
 const ImageSourcePropType = PropTypes.oneOfType([
   ImageURISourcePropType,
-  // Opaque type returned by require('./image.jpg')
   PropTypes.number,
-  // Multiple sources
   PropTypes.arrayOf(ImageURISourcePropType),
 ]);
 
