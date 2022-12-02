@@ -9,6 +9,7 @@
 
 'use strict';
 
+const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const DeprecatedEdgeInsetsPropType = require('./DeprecatedEdgeInsetsPropType');
 const DeprecatedImageSourcePropType = require('./DeprecatedImageSourcePropType');
 const DeprecatedImageStylePropTypes = require('./DeprecatedImageStylePropTypes');
@@ -21,10 +22,13 @@ const PropTypes = require('prop-types');
  */
 const DeprecatedImagePropType = {
   ...DeprecatedViewPropTypes,
+  alt: PropTypes.string,
   blurRadius: PropTypes.number,
   capInsets: DeprecatedEdgeInsetsPropType,
+  crossOrigin: PropTypes.oneOf(['anonymous', 'use-credentials']),
   defaultSource: DeprecatedImageSourcePropType,
   fadeDuration: PropTypes.number,
+  height: PropTypes.number,
   internal_analyticTag: PropTypes.string,
   loadingIndicatorSource: PropTypes.oneOfType([
     PropTypes.shape({
@@ -39,6 +43,16 @@ const DeprecatedImagePropType = {
   onPartialLoad: PropTypes.func,
   onProgress: PropTypes.func,
   progressiveRenderingEnabled: PropTypes.bool,
+  referrerPolicy: PropTypes.oneOf([
+    'no-referrer',
+    'no-referrer-when-downgrade',
+    'origin',
+    'origin-when-cross-origin',
+    'same-origin',
+    'strict-origin',
+    'strict-origin-when-cross-origin',
+    'unsafe-url',
+  ]),
   resizeMethod: PropTypes.oneOf(['auto', 'resize', 'scale']),
   resizeMode: PropTypes.oneOf([
     'cover',
@@ -48,8 +62,12 @@ const DeprecatedImagePropType = {
     'center',
   ]),
   source: DeprecatedImageSourcePropType,
+  src: PropTypes.string,
+  srcSet: PropTypes.string,
   style: DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes),
   testID: PropTypes.string,
+  tintColor: DeprecatedColorPropType,
+  width: PropTypes.number,
 };
 
 module.exports = DeprecatedImagePropType;

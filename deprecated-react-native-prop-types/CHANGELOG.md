@@ -5,3 +5,4 @@
   - Merged Android and default definitions.
   - Includes all of `ViewPropTypes`.
   - Complete checks for `defaultSource` and `source`.
+  - Added `alt`, `crossOrigin`, `height`, `referrerPolicy`, `src`, `srcSet`, `tintColor`, and `width`.
