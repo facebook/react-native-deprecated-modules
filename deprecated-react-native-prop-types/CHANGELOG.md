@@ -7,3 +7,7 @@
   - Complete checks for `defaultSource` and `source`.
   - Added `alt`, `crossOrigin`, `height`, `referrerPolicy`, `src`, `srcSet`, `tintColor`, and `width`.
   - Added `objectFit` to `style`.
+- Improvements to `LayoutPropTypes`
+  - Changed `aspectRatio` so it can be a string ratio.
+  - Added `{margin,padding}{Block,Inline}{,End,Start}`.
+  - Added `columnGap`, `gap`, and `rowGap`.
