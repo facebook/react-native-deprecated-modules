@@ -13,7 +13,7 @@ const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const DeprecatedLayoutPropTypes = require('./DeprecatedLayoutPropTypes');
 const DeprecatedShadowPropTypesIOS = require('./DeprecatedShadowPropTypesIOS');
 const DeprecatedTransformPropTypes = require('./DeprecatedTransformPropTypes');
-const ReactPropTypes = require('prop-types');
+const PropTypes = require('prop-types');
 
 /**
  * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
@@ -22,32 +22,32 @@ const DeprecatedViewStylePropTypes = {
   ...DeprecatedLayoutPropTypes,
   ...DeprecatedShadowPropTypesIOS,
   ...DeprecatedTransformPropTypes,
-  backfaceVisibility: ReactPropTypes.oneOf(['hidden', 'visible']),
+  backfaceVisibility: PropTypes.oneOf(['hidden', 'visible']),
   backgroundColor: DeprecatedColorPropType,
   borderBottomColor: DeprecatedColorPropType,
-  borderBottomEndRadius: ReactPropTypes.number,
-  borderBottomLeftRadius: ReactPropTypes.number,
-  borderBottomRightRadius: ReactPropTypes.number,
-  borderBottomStartRadius: ReactPropTypes.number,
-  borderBottomWidth: ReactPropTypes.number,
+  borderBottomEndRadius: PropTypes.number,
+  borderBottomLeftRadius: PropTypes.number,
+  borderBottomRightRadius: PropTypes.number,
+  borderBottomStartRadius: PropTypes.number,
+  borderBottomWidth: PropTypes.number,
   borderColor: DeprecatedColorPropType,
   borderEndColor: DeprecatedColorPropType,
   borderLeftColor: DeprecatedColorPropType,
-  borderLeftWidth: ReactPropTypes.number,
-  borderRadius: ReactPropTypes.number,
+  borderLeftWidth: PropTypes.number,
+  borderRadius: PropTypes.number,
   borderRightColor: DeprecatedColorPropType,
-  borderRightWidth: ReactPropTypes.number,
+  borderRightWidth: PropTypes.number,
   borderStartColor: DeprecatedColorPropType,
-  borderStyle: ReactPropTypes.oneOf(['dashed', 'dotted', 'solid']),
+  borderStyle: PropTypes.oneOf(['dashed', 'dotted', 'solid']),
   borderTopColor: DeprecatedColorPropType,
-  borderTopEndRadius: ReactPropTypes.number,
-  borderTopLeftRadius: ReactPropTypes.number,
-  borderTopRightRadius: ReactPropTypes.number,
-  borderTopStartRadius: ReactPropTypes.number,
-  borderTopWidth: ReactPropTypes.number,
-  borderWidth: ReactPropTypes.number,
-  elevation: ReactPropTypes.number,
-  opacity: ReactPropTypes.number,
+  borderTopEndRadius: PropTypes.number,
+  borderTopLeftRadius: PropTypes.number,
+  borderTopRightRadius: PropTypes.number,
+  borderTopStartRadius: PropTypes.number,
+  borderTopWidth: PropTypes.number,
+  borderWidth: PropTypes.number,
+  elevation: PropTypes.number,
+  opacity: PropTypes.number,
 };
 
 module.exports = DeprecatedViewStylePropTypes;

@@ -11,7 +11,7 @@
 
 const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const DeprecatedViewStylePropTypes = require('./DeprecatedViewStylePropTypes');
-const ReactPropTypes = require('prop-types');
+const PropTypes = require('prop-types');
 
 /**
  * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
@@ -19,11 +19,11 @@ const ReactPropTypes = require('prop-types');
 const DeprecatedTextStylePropTypes = {
   ...DeprecatedViewStylePropTypes,
   color: DeprecatedColorPropType,
-  fontFamily: ReactPropTypes.string,
-  fontSize: ReactPropTypes.number,
-  fontStyle: ReactPropTypes.oneOf(['italic', 'normal']),
-  fontVariant: ReactPropTypes.arrayOf(
-    ReactPropTypes.oneOf([
+  fontFamily: PropTypes.string,
+  fontSize: PropTypes.number,
+  fontStyle: PropTypes.oneOf(['italic', 'normal']),
+  fontVariant: PropTypes.arrayOf(
+    PropTypes.oneOf([
       'lining-nums',
       'oldstyle-nums',
       'proportional-nums',
@@ -31,7 +31,7 @@ const DeprecatedTextStylePropTypes = {
       'tabular-nums',
     ]),
   ),
-  fontWeight: ReactPropTypes.oneOf([
+  fontWeight: PropTypes.oneOf([
     '100',
     '200',
     '300',
@@ -42,50 +42,34 @@ const DeprecatedTextStylePropTypes = {
     '800',
     '900',
     'bold',
-    'normal' /*default*/,
+    'normal',
   ]),
-  includeFontPadding: ReactPropTypes.bool,
-  letterSpacing: ReactPropTypes.number,
-  lineHeight: ReactPropTypes.number,
-  textAlign: ReactPropTypes.oneOf([
-    'auto' /*default*/,
-    'center',
-    'justify',
-    'left',
-    'right',
-  ]),
-  textAlignVertical: ReactPropTypes.oneOf([
-    'auto' /*default*/,
-    'bottom',
-    'center',
-    'top',
-  ]),
+  includeFontPadding: PropTypes.bool,
+  letterSpacing: PropTypes.number,
+  lineHeight: PropTypes.number,
+  textAlign: PropTypes.oneOf(['auto', 'center', 'justify', 'left', 'right']),
+  textAlignVertical: PropTypes.oneOf(['auto', 'bottom', 'center', 'top']),
   textDecorationColor: DeprecatedColorPropType,
-  textDecorationLine: ReactPropTypes.oneOf([
+  textDecorationLine: PropTypes.oneOf([
     'line-through',
-    'none' /*default*/,
+    'none',
     'underline line-through',
     'underline',
   ]),
-  textDecorationStyle: ReactPropTypes.oneOf([
-    'dashed',
-    'dotted',
-    'double',
-    'solid' /*default*/,
-  ]),
+  textDecorationStyle: PropTypes.oneOf(['dashed', 'dotted', 'double', 'solid']),
   textShadowColor: DeprecatedColorPropType,
-  textShadowOffset: ReactPropTypes.shape({
-    height: ReactPropTypes.number,
-    width: ReactPropTypes.number,
+  textShadowOffset: PropTypes.shape({
+    height: PropTypes.number,
+    width: PropTypes.number,
   }),
-  textShadowRadius: ReactPropTypes.number,
-  textTransform: ReactPropTypes.oneOf([
+  textShadowRadius: PropTypes.number,
+  textTransform: PropTypes.oneOf([
     'capitalize',
     'lowercase',
-    'none' /*default*/,
+    'none',
     'uppercase',
   ]),
-  writingDirection: ReactPropTypes.oneOf(['auto' /*default*/, 'ltr', 'rtl']),
+  writingDirection: PropTypes.oneOf(['auto', 'ltr', 'rtl']),
 };
 
 module.exports = DeprecatedTextStylePropTypes;
