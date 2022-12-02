@@ -12,6 +12,9 @@
     "invariant": "*",
     "prop-types": "*"
   },
+  "scripts": {
+    "test": "node -e \"Object.values(require('.'))\""
+  },
   "prettier": {
     "requirePragma": true,
     "singleQuote": true,
