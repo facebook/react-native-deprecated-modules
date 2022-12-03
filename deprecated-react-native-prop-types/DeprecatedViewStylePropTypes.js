@@ -31,6 +31,7 @@ const DeprecatedViewStylePropTypes = {
   borderBottomStartRadius: PropTypes.number,
   borderBottomWidth: PropTypes.number,
   borderColor: DeprecatedColorPropType,
+  borderCurve: PropTypes.oneOf(['circular', 'continuous']),
   borderEndColor: DeprecatedColorPropType,
   borderLeftColor: DeprecatedColorPropType,
   borderLeftWidth: PropTypes.number,
@@ -48,6 +49,7 @@ const DeprecatedViewStylePropTypes = {
   borderWidth: PropTypes.number,
   elevation: PropTypes.number,
   opacity: PropTypes.number,
+  pointerEvents: PropTypes.oneOf(['auto', 'box-none', 'box-only', 'none']),
 };
 
 module.exports = DeprecatedViewStylePropTypes;

@@ -29,3 +29,5 @@ ImagePropTypes`
   - Removed deprecated props: `decomposedMatrix`, `rotation`, `scaleX`, `scaleY`, `transformMatrix`, `translateX`, `translateY`
 - Improvements to `ViewPropTypes`
   - Changed `hitSlop` to accept a number.
+  - Added `accessibilityLabelledBy`, `accessibilityLanguage`, `aria-busy`, `aria-checked`, `aria-disabled`, `aria-expanded`, `aria-hidden`, `aria-label`, `aria-labelledby`, `aria-live`, `aria-modal`, `aria-selected`, `aria-valuemax`, `aria-valuemin`, `aria-valuenow`, `aria-valuetext`, `id`, `role`, and `tabIndex.`
+  - Added `borderCurve` and `pointerEvents` to `style`.
