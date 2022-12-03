@@ -11,3 +11,7 @@
   - Changed `aspectRatio` so it can be a string ratio.
   - Added `{margin,padding}{Block,Inline}{,End,Start}`.
   - Added `columnGap`, `gap`, and `rowGap`.
+- Improvements to `TextInputPropTypes`
+  - Renamed `autoCompleteType` to `autoComplete`.
+  - Added many new valid values for `autoComplete`.
+  - Added `cursorColor`, `enterKeyHint`, `inputMode`, `lineBreakStrategyIOS`, `readOnly`, `rows`, and `submitBehavior`.
