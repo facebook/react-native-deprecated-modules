@@ -11,10 +11,14 @@
 
 const DeprecatedEdgeInsetsPropType = require('./DeprecatedEdgeInsetsPropType');
 const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
+const {
+  AccessibilityActionInfoPropType,
+  AccessibilityRolePropType,
+  AccessibilityStatePropType,
+  AccessibilityValuePropType,
+} = require('./DeprecatedViewAccessibility');
 const DeprecatedViewStylePropTypes = require('./DeprecatedViewStylePropTypes');
 const PropTypes = require('prop-types');
-
-const {DeprecatedAccessibilityRoles} = require('./DeprecatedViewAccessibility');
 
 const stylePropType = DeprecatedStyleSheetPropType(
   DeprecatedViewStylePropTypes,
@@ -24,15 +28,15 @@ const stylePropType = DeprecatedStyleSheetPropType(
  * @see facebook/react-native/Libraries/Components/View/ViewPropTypes.js
  */
 module.exports = {
-  accessibilityActions: PropTypes.arrayOf(PropTypes.string),
+  accessibilityActions: PropTypes.arrayOf(AccessibilityActionInfoPropType),
   accessibilityElementsHidden: PropTypes.bool,
   accessibilityHint: PropTypes.string,
   accessibilityIgnoresInvertColors: PropTypes.bool,
   accessibilityLabel: PropTypes.node,
   accessibilityLiveRegion: PropTypes.oneOf(['assertive', 'none', 'polite']),
-  accessibilityRole: PropTypes.oneOf(DeprecatedAccessibilityRoles),
-  accessibilityState: PropTypes.object,
-  accessibilityValue: PropTypes.object,
+  accessibilityRole: AccessibilityRolePropType,
+  accessibilityState: AccessibilityStatePropType,
+  accessibilityValue: AccessibilityValuePropType,
   accessibilityViewIsModal: PropTypes.bool,
   accessible: PropTypes.bool,
   collapsable: PropTypes.bool,
