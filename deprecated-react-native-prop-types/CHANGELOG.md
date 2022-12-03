@@ -27,3 +27,5 @@ ImagePropTypes`
   - Added `userSelect` and `verticalAlign` in `style`.
 - Improvements to `TransformPropTypes`
   - Removed deprecated props: `decomposedMatrix`, `rotation`, `scaleX`, `scaleY`, `transformMatrix`, `translateX`, `translateY`
+- Improvements to `ViewPropTypes`
+  - Changed `hitSlop` to accept a number.
