@@ -3,10 +3,7 @@
   "version": "3.0.0",
   "description": "Deprecated prop-types from React Native.",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:facebook/react-native-deprecated-modules.git"
-  },
+  "repository": "github:facebook/react-native-deprecated-modules",
   "dependencies": {
     "@react-native/normalize-color": "*",
     "invariant": "*",
