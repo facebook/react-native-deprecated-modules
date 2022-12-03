@@ -22,3 +22,4 @@ ImagePropTypes`
 - Improvements to `TextPropTypes`
   - Added `accessibilityActions`, `accessibilityHint`, `accessibilityLabel`, `accessibilityLanguage`, `accessibilityRole`, `accessibilityState`, `aria-busy`, `aria-checked`, `aria-disabled`, `aria-expanded`, `aria-label`, `aria-labelledby`, `aria-selected`, `dynamicTypeRamp`, `id`, `lineBreakStrategyIOS`, `onAccessibilityAction`, and `role`.
   - Added `onPressIn`, `onPressOut`, `onResponderGrant`, `onResponderMove`, `onResponderRelease`, `onResponderTerminate`, `onResponderTerminationRequest`, `onStartShouldSetResponder`, `onMoveShouldSetResponder`, and `onTextLayout`.
+  - Added numeric and named values for `fontWeight` in `style`.
