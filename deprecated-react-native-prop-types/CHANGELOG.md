@@ -1,4 +1,4 @@
-# 3.0.0 / 2022-12-02
+# 3.0.1 / 2022-12-02
 
 - Compatible with React Native 0.71
 - Improvements to `ImagePropTypes`
