@@ -9,7 +9,7 @@
 
 'use strict';
 
-const normalizeColor = require('@react-native/normalize-color');
+const normalizeColor = require('@react-native/normalize-colors');
 
 /**
  * @see facebook/react-native/Libraries/StyleSheet/StyleSheetTypes.js
