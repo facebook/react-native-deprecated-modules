@@ -1,3 +1,13 @@
+# 4.0.0 / 2022-12-13
+
+- Compatible with React Native 0.72
+- Updated dependency from `@react-native/normalize-color` to 
+  `@react-native/normalize-colors` due to upstream renaming of such dependency, 
+  needed for compatibility with 0.72
+- This major bump is needed as `react-native@0.71` will still use 
+  `@react-native/normalize-color` and we want users of 0.71 to continue depending 
+  on 3.0.1.
+
 # 3.0.1 / 2022-12-02
 
 - Compatible with React Native 0.71
