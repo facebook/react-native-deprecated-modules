@@ -69,6 +69,13 @@ const DeprecatedLayoutPropTypes = {
   flexWrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
   gap: PropTypes.number,
   height: DimensionValuePropType,
+  inset: DimensionValuePropType,
+  insetBlock: DimensionValuePropType,
+  insetBlockEnd: DimensionValuePropType,
+  insetBlockStart: DimensionValuePropType,
+  insetInline: DimensionValuePropType,
+  insetInlineEnd: DimensionValuePropType,
+  insetInlineStart: DimensionValuePropType,
   justifyContent: PropTypes.oneOf([
     'center',
     'flex-end',
