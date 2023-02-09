@@ -42,12 +42,12 @@ const DeprecatedTextPropTypes = {
   accessibilityLanguage: PropTypes.string,
   accessibilityRole: AccessibilityRolePropType,
   accessibilitySpan: PropTypes.oneOf([
-    | 'none'
-    | 'cardinal'
-    | 'ordinal'
-    | 'measure'
-    | 'telephone'
-    | 'verbatim'
+    'none',
+    'cardinal',
+    'ordinal',
+    'measure',
+    'telephone',
+    'verbatim',
   ]),
   accessibilityState: AccessibilityStatePropType,
   accessible: PropTypes.bool,
