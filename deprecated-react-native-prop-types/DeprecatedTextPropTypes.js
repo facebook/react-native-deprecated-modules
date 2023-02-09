@@ -48,7 +48,7 @@ const DeprecatedTextPropTypes = {
     | 'measure'
     | 'telephone'
     | 'verbatim'
-  ),
+  ]),
   accessibilityState: AccessibilityStatePropType,
   accessible: PropTypes.bool,
   adjustsFontSizeToFit: PropTypes.bool,
