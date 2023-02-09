@@ -28,6 +28,8 @@ const DataDetectorTypes = [
  */
 const DeprecatedTextInputPropTypes = {
   ...DeprecatedViewPropTypes,
+  accessibilityErrorMessage: PropTypes.string,
+  accessibilityInvalid: PropTypes.bool,
   allowFontScaling: PropTypes.bool,
   autoCapitalize: PropTypes.oneOf(['none', 'sentences', 'words', 'characters']),
   autoComplete: PropTypes.oneOf([
