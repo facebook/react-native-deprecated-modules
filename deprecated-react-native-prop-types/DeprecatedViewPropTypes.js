@@ -98,7 +98,7 @@ const DeprecatedViewPropTypes = {
   'aria-hidden': PropTypes.bool,
   'aria-label': PropTypes.string,
   'aria-labelledby': PropTypes.string,
-  'aria-live': PropTypes.oneOf(['polite' | 'assertive' | 'off']),
+  'aria-live': PropTypes.oneOf(['polite', 'assertive', 'off']),
   'aria-modal': PropTypes.bool,
   'aria-selected': PropTypes.bool,
   'aria-valuemax': PropTypes.number,
