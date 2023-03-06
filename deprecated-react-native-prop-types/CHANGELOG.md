@@ -1,3 +1,9 @@
+# Next
+
+- Added logical inset properties: `inset`, `insetBlock`, `insetBlockEnd`, `insetBlockStart`, `insetInline`, `insetInlineEnd`, `insetInlineStart` (https://github.com/facebook/react-native-deprecated-modules/pull/12)
+- Added logical border properties: `borderEndEndRadius`, `borderEndStartRadius`, `borderStartEndRadius`, `borderStartStartRadius` (https://github.com/facebook/react-native-deprecated-modules/pull/14)
+- Fixed `aria-live` declaration. (https://github.com/facebook/react-native-deprecated-modules/pull/20)
+
 # 4.0.0 / 2022-12-13
 
 - Compatible with React Native 0.72
