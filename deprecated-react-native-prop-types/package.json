@@ -1,6 +1,6 @@
 {
   "name": "deprecated-react-native-prop-types",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Deprecated prop-types from React Native.",
   "license": "MIT",
   "repository": "github:facebook/react-native-deprecated-modules",
