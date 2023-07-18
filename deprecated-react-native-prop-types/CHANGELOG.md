@@ -1,4 +1,6 @@
-# Next
+# 4.2.0 / 2023-07-18
+
+- Add iOS 17 textContentType types (https://github.com/facebook/react-native-deprecated-modules/pull/23)
 
 # 4.1.0 / 2023-04-19
 
