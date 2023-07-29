@@ -1,0 +1,22 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @flow strict
+ * @format
+ */
+
+import type ListViewDataSource from './ListViewDataSource';
+
+declare export default class ListView extends React$Component<any> {
+  static DataSource: Class<ListViewDataSource>;
+  setNativeProps(props: Object): any;
+  flashScrollIndicators(): any;
+  getScrollResponder(): any;
+  getScrollableNode(): any;
+  getMetrics(): Object;
+  scrollTo(...args: Array<mixed>): any;
+  scrollToEnd(options?: ?{animated?: ?boolean}): any;
+}

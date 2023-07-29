@@ -1,0 +1,33 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @flow strict
+ * @format
+ */
+
+declare export default class ListViewDataSource {
+  constructor(params: any): ListViewDataSource;
+  cloneWithRows(
+    dataBlob: $ReadOnlyArray<any> | {+[key: string]: any},
+    rowIdentities: ?$ReadOnlyArray<string>,
+  ): ListViewDataSource;
+  cloneWithRowsAndSections(
+    dataBlob: any,
+    sectionIdentities: ?Array<string>,
+    rowIdentities: ?Array<Array<string>>,
+  ): ListViewDataSource;
+  getRowCount(): number;
+  getRowAndSectionCount(): number;
+  rowShouldUpdate(sectionIndex: number, rowIndex: number): boolean;
+  getRowData(sectionIndex: number, rowIndex: number): any;
+  getRowIDForFlatIndex(index: number): ?string;
+  getSectionIDForFlatIndex(index: number): ?string;
+  getSectionLengths(): Array<number>;
+  sectionHeaderShouldUpdate(sectionIndex: number): boolean;
+  getSectionHeaderData(sectionIndex: number): any;
+  rowIdentities: Array<Array<string>>;
+  sectionIdentities: Array<string>;
+}
