@@ -1,4 +1,4 @@
-# Next
+# 4.2.1 / 2023-07-28
 
 - Added `@flow` so all modules can be imported without suppressing [untyped-import]
 
