@@ -1,6 +1,6 @@
 # 4.2.2 / 2023-10-12
 
-- Restricted `@react-native/normalize-colors` dependency to `<0.74.0` to avoid a transitive Node >= 18 requirement.
+- Restricted `@react-native/normalize-colors` dependency to `<0.73.0` to avoid a transitive Node >= 18 requirement.
 
 # 4.2.1 / 2023-07-28
 
