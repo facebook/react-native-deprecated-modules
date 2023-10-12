@@ -1,3 +1,7 @@
+# 4.2.3 / 2023-10-12
+
+- Use semver ranges for prop-types and invariant deps.
+
 # 4.2.2 / 2023-10-12
 
 - Restricted `@react-native/normalize-colors` dependency to `<0.73.0` to avoid a transitive Node >= 18 requirement.
