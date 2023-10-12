@@ -1,3 +1,6 @@
+# 3.0.2 / 2023-10-12
+- Specify dependencies with semver ranges to avoid picking up transitive breaking changes.
+
 # 3.0.1 / 2022-12-02
 
 - Compatible with React Native 0.71
