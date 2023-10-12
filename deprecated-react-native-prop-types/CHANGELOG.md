@@ -1,3 +1,8 @@
+# 5.0.0 / 2023-10-12
+
+- (Breaking) bump dependency on `@react-native/normalize-colors` to `^0.73.0` - this requires Node >= 18
+- Explicitly require Node >= 18 via `engines`
+
 # 4.2.3 / 2023-10-12
 
 - Use semver ranges for prop-types and invariant deps.
