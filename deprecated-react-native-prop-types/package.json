@@ -19,5 +19,8 @@
     "bracketSpacing": false,
     "jsxBracketSameLine": true,
     "arrowParens": "avoid"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
