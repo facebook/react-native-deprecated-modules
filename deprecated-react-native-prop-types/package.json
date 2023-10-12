@@ -5,9 +5,9 @@
   "license": "MIT",
   "repository": "github:facebook/react-native-deprecated-modules",
   "dependencies": {
-    "@react-native/normalize-color": "*",
-    "invariant": "*",
-    "prop-types": "*"
+    "@react-native/normalize-color": "^2.1.0",
+    "invariant": "^2.2.4",
+    "prop-types": "^15.8.1"
   },
   "scripts": {
     "test": "node -e \"Object.values(require('.'))\""
