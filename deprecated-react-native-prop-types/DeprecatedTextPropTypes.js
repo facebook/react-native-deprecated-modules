@@ -46,6 +46,7 @@ const DeprecatedTextPropTypes = {
   accessible: PropTypes.bool,
   adjustsFontSizeToFit: PropTypes.bool,
   allowFontScaling: PropTypes.bool,
+  android_hyphenationFrequency: PropTypes.oneOf(['normal', 'none', 'full']),
   dataDetectorType: PropTypes.oneOf([
     'all',
     'email',
