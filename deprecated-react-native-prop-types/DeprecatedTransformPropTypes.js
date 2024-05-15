@@ -16,6 +16,7 @@ const PropTypes = require('prop-types');
  * @see facebook/react-native/Libraries/StyleSheet/private/_TransformStyle.js
  */
 const DeprecatedTransformPropTypes = {
+  transformOrigin: PropTypes.string,
   transform: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({perspective: PropTypes.number}),
